@@ -75,7 +75,7 @@ public struct DataPoint {
         - visible: The boolean that controls the visibility of the data point in the chart. Default value is true.
         - order: Int respresenting the order to display
      */
-    public init(value: Double, label: String, legend: Legend, visible: Bool = true, order:Int) {
+    public init(value: Double, label: String, legend: Legend, visible: Bool = true, order:Int = 1) {
         self.startValue = 0
         self.endValue = value
         self.label = label
@@ -97,15 +97,17 @@ public struct DataPoint {
     public init(
         startValue: Double,
         endValue: Double,
-        label: LocalizedStringKey,
+        label: String,
         legend: Legend,
-        visible: Bool = true
+        visible: Bool = true,
+        order:Int = 1
     ) {
         self.startValue = startValue
         self.endValue = endValue
         self.label = label
         self.legend = legend
         self.visible = visible
+        self.order = order
     }
 
 }
