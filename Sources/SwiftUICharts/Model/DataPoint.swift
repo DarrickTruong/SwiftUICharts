@@ -56,8 +56,8 @@ public struct DataPoint {
     /// Double value representing the data point
     public let endValue: Double
 
-    /// LocalizedStringKey representing the data point
-    public let label: LocalizedStringKey
+    /// String representing the data point
+    public let label: String
 
     /// ``Legend`` value representing the data point
     public let legend: Legend
@@ -73,13 +73,15 @@ public struct DataPoint {
         - label: LocalizedStringKey that describes the point.
         - legend: The legend of data point, usually appears below the chart.
         - visible: The boolean that controls the visibility of the data point in the chart. Default value is true.
+        - order: Int respresenting the order to display
      */
-    public init(value: Double, label: LocalizedStringKey, legend: Legend, visible: Bool = true) {
+    public init(value: Double, label: String, legend: Legend, visible: Bool = true, order:Int) {
         self.startValue = 0
         self.endValue = value
         self.label = label
         self.legend = legend
         self.visible = visible
+        self.order = order
     }
 
     /**
