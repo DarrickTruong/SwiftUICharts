@@ -20,7 +20,9 @@ public struct HorizontalBarChartView: View {
         - barMaxWidth: The maximal width for the bar that presents the biggest value. Default is 100.
      */
     public init(dataPoints: [DataPoint], barMaxWidth: CGFloat = 100) {
-        self.dataPoints = dataPoints
+        self.dataPoints = dataPoints.sorted {
+            $0.order < $1.order
+        }
         self.barMaxWidth = barMaxWidth
     }
 

@@ -47,6 +47,9 @@ extension Legend: Hashable {
 
 /// The type that describes a data point in the chart.
 public struct DataPoint {
+    
+    // Order to be displayed
+    public let order: Int
     /// Starting point of a bar (used only in the ``BarChartView``)
     public let startValue: Double
 
